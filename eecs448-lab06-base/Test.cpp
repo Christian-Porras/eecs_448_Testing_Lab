@@ -4,6 +4,7 @@ void Test::runTestSuite(){
   testSize0();
   testSize1();
   testSize2();
+  testSize3();
   testIsEmpty();
 }
 
@@ -46,6 +47,22 @@ bool Test::testSize2(){
     std::cout<<"Failed! Size returned: "<<testList.size()<<std::endl;
   }
   return(testList.size() == 1);
+}
+
+bool Test::testSize3(){
+  LinkedListOfInts testList;
+  std::cout<<"Test 4: size of list after multiple addBacks: ";
+
+  testList.addBack(1);
+  testList.addBack(2);
+  testList.addBack(3);
+  if(testList.size() == 3){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<std::endl;
+  }
+  return(testList.size() == 3);
 }
 
 bool Test::testIsEmpty(){
