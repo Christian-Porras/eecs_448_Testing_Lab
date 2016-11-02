@@ -14,11 +14,10 @@
 class Test{
 
   public:
-    void runTestSuite();
-    //tests if size of empty list is zero
-    bool testSize0();
-
-    bool test2();
+    void runTestSuite();        //runs all the include tests
+    bool testSize0();           //tests if size of empty list is zero
+    bool testIsEmpty();         //tests if isEmpty returns correct value
+    bool testAddBackOnEmpty();  //tests if addBack works on an empty list
 
 };
 
