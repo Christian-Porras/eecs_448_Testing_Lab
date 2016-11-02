@@ -16,7 +16,8 @@ class Test{
   public:
     void runTestSuite();        //runs all the include tests
     bool testSize0();           //tests if size of empty list is zero
-    bool testSize1();           //tests if size on list is one after one add
+    bool testSize1();           //tests if size on list is one after one addBack
+    bool testSize2();           //tests if size on list is one ater one addFront
     bool testIsEmpty();         //tests if isEmpty returns correct value
 
 };
