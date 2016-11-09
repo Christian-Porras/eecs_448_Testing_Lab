@@ -12,6 +12,9 @@ void Test::runTestSuite(){
   testRemoveBack();
   testAddBack();
   testAddFront();
+  testSearchOnEmpty();
+  testSearch1();
+  testSearch2();
 
 }
 
@@ -227,4 +230,62 @@ bool Test::testAddFront(){
     std::cout<<std::endl;
   }
   return(passed);
+}
+
+bool Test::testSearchOnEmpty(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 12: Search on empty list returns false: ";
+
+  if(!testList.search(1)){
+      std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Search returned: "<<testList.search(1)<<" on an empty list"<<std::endl;
+  }
+  return(testList.search(1));
+}
+
+bool Test::testSearch1(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 13: Search for non-included value returns false: ";
+
+  testList.addFront(1);
+  testList.addFront(2);
+  testList.addFront(3);
+
+  if(!testList.search(4)){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Search for 4 returned: "<<testList.search(4)<<" on list populated with ";
+    std::vector<int> values = testList.toVector();
+    for(int i=0;i<3;i++){
+      std::cout<<values[i]<<"; ";
+    }
+    std::cout<<std::endl;
+  }
+  return(testList.search(4));
+}
+
+bool Test::testSearch2(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 13: Search for included value returns true: ";
+
+  testList.addFront(1);
+  testList.addFront(2);
+  testList.addFront(3);
+  testList.addFront(4);
+
+  if(testList.search(4)){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Search for 4 returned: "<<testList.search(4)<<" on list populated with ";
+    std::vector<int> values = testList.toVector();
+    for(int i=0;i<4;i++){
+      std::cout<<values[i]<<"; ";
+    }
+    std::cout<<std::endl;
+  }
+  return(testList.search(4));
 }

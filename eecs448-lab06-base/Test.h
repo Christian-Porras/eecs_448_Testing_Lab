@@ -26,6 +26,9 @@ class Test{
     bool testRemoveBack();                //test if removeBack on populated list returns correct size
     bool testAddBack();                   //test if addback adds items in correct order
     bool testAddFront();                  //test if addFront adds items in correct order
+    bool testSearchOnEmpty();             //test if search on empty returns false
+    bool testSearch1();                   //test if search for 4 on list not containing it returns false
+    bool testSearch2();                   //test if search for 4 on list containing it returns true
 };
 
 #endif
