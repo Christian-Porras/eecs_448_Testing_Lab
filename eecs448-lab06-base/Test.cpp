@@ -6,7 +6,10 @@ void Test::runTestSuite(){
   testSize1();
   testSize2();
   testSize3();
+  testRemoveFrontOnEmpty();
+  testRemoveBackOnEmpty();
   testRemoveFront();
+  testRemoveBack();
 
 }
 
@@ -80,7 +83,7 @@ bool Test::testSize3(){
   return(testList.size() == 3);
 }
 
-bool Test::testRemoveFront(){
+bool Test::testRemoveFrontOnEmpty(){
   LinkedListOfInts  testList;
   std::cout<<"Test 6: Remove Front on empty list returns size 0: ";
 
@@ -93,4 +96,59 @@ bool Test::testRemoveFront(){
     std::cout<<"Failed! Expected Size = 0. Size returned: "<<testList.size()<<std::endl;
   }
   return(testList.size() == 0);
+}
+
+bool Test::testRemoveBackOnEmpty(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 7: Remove Back on empty list returns size 0: ";
+
+  testList.removeBack();
+
+  if(testList.size()==0){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Expected Size = 0. Size returned: "<<testList.size()<<std::endl;
+  }
+  return(testList.size()==0);
+}
+
+bool Test::testRemoveFront(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 8: Remove Front on list returns correct size: ";
+
+  testList.addBack(1);
+  testList.addBack(2);
+  testList.addBack(3);
+  testList.addBack(4);
+
+  testList.removeFront();
+
+  if(testList.size()==3){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<std::endl;
+  }
+  return(testList.size()==3);
+}
+
+bool Test::testRemoveBack(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 9: Remove Back on list returns correct size: ";
+
+  testList.addBack(1);
+  testList.addBack(2);
+  testList.addBack(3);
+  testList.addBack(4);
+
+  testList.removeBack();
+
+  if(testList.size()==3){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<std::endl;
+  }
+  return(testList.size()==3);
 }
