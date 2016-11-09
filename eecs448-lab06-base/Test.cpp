@@ -133,7 +133,12 @@ bool Test::testRemoveFront(){
     std::cout<<"Passed!"<<std::endl;
   }
   else{
-    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<std::endl;
+    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<". List is ";\
+    std::vector<int> values = testList.toVector();
+    for(int i=0;i<4;i++){
+      std::cout<<values[i]<<"; ";
+    }
+    std::cout<<std::endl;
   }
   return(testList.size()==3);
 }
@@ -153,7 +158,13 @@ bool Test::testRemoveBack(){
     std::cout<<"Passed!"<<std::endl;
   }
   else{
-    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<std::endl;
+    std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<". List is ";\
+    std::vector<int> values = testList.toVector();
+    for(int i=0;i<4;i++){
+      std::cout<<values[i]<<"; ";
+    }
+    std::cout<<std::endl;
+
   }
   return(testList.size()==3);
 }
