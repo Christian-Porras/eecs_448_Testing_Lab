@@ -20,6 +20,7 @@ class Test{
     bool testSize2();           //tests if size on list is one ater one addFront
     bool testSize3();           //tests if size returns expected value after multiple addBacks
     bool testIsEmpty();         //tests if isEmpty returns correct value
+    bool testRemoveFront();
 
 };
 
