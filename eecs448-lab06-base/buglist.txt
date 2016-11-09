@@ -1,0 +1,4 @@
+Bugs found:
+Remove Front does not remove any thing
+Remove Back does not remove any thing
+Add Back acts as Add front
