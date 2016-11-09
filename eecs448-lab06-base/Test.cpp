@@ -10,6 +10,8 @@ void Test::runTestSuite(){
   testRemoveBackOnEmpty();
   testRemoveFront();
   testRemoveBack();
+  testAddBack();
+  testAddFront();
 
 }
 
@@ -151,4 +153,78 @@ bool Test::testRemoveBack(){
     std::cout<<"Failed! Expected Size = 3. Size returned: "<<testList.size()<<std::endl;
   }
   return(testList.size()==3);
+}
+
+bool Test::testAddBack(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 10: Add Back adds items in correct order: ";
+
+  testList.addBack(1);
+  testList.addBack(2);
+  testList.addBack(3);
+  testList.addBack(4);
+
+  std::vector<int> values = testList.toVector();
+  bool passed = true;
+
+  int i = 0;
+
+  while(i<4 && passed){
+    if(i+1 == values[i]){
+      passed = true;
+    }
+    else{
+      passed = false;
+    }
+    i++;
+  }
+
+  if(passed){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! List should be 1; 2; 3; 4; Returns: ";
+    for(i=0;i<4;i++){
+      std::cout<<values[i]<<"; ";
+    }
+    std::cout<<std::endl;
+  }
+  return(passed);
+}
+
+bool Test::testAddFront(){
+  LinkedListOfInts  testList;
+  std::cout<<"Test 11: Add Front adds items in correct order: ";
+
+  testList.addFront(4);
+  testList.addFront(3);
+  testList.addFront(2);
+  testList.addFront(1);
+
+  std::vector<int> values = testList.toVector();
+  bool passed = true;
+
+  int i = 0;
+
+  while(i<4 && passed){
+    if(i+1 == values[i]){
+      passed = true;
+    }
+    else{
+      passed = false;
+    }
+    i++;
+  }
+
+  if(passed){
+    std::cout<<"Passed!"<<std::endl;
+  }
+  else{
+    std::cout<<"Failed! List should be 1; 2; 3; 4; Returns: ";
+    for(i=0;i<4;i++){
+      std::cout<<values[i]<<"; ";
+    }
+    std::cout<<std::endl;
+  }
+  return(passed);
 }
